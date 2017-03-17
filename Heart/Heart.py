@@ -1,10 +1,11 @@
 
 # California State University Fullerton
 # CPSC 483: Data Mining and Pattern Recognition - Spring 2017
-# Professor: Kenytt Avery
-# Software Engineers: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey
 
-# Classification of the Heart Disease data set 
+# Software Engineers: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey
+# Courtesy of Stephen Marsland
+
+# Machine learning: Classification of the Heart Disease data set 
 
 def preprocessHeart(infile,outfile):
 
