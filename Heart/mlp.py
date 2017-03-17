@@ -2,10 +2,10 @@
 # California State University Fullerton
 # CPSC 483: Data Mining and Pattern Recognition - Spring 2017
 
-# You are free to use, change, or redistribute the code in any way you wish for
-# non-commercial purposes, but please maintain the name of the original author.
-# This code comes with no warranty of any kind.
+# Software Engineers: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey
+# Courtesy of Stephen Marsland
 
+# Machine learning: Classification of the Heart Disease data set 
 
 import numpy as np
 
