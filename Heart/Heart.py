@@ -15,14 +15,16 @@ def preprocessHeart(infile,outfile):
 # try to preprocess the original heart-data set ('reprocessed.hungarian') 
 # According to the text on page 93, we need to preprocess the data so that later
 # on we can evenly split it into training, validation, and test sets
-# There is a total of 294 examples in our selected dataset (heart-disease.data) so we need to
-# split the first 98 into training, the second 98 into validation, and the last 98 into testing sets.
-# This mean we have to change the last number of the first 98 examples into 0, the next 98 examples into 1, etc
+# There is a total of 294 examples in our selected dataset (heart-disease.data).
+# We need to place the first 98 examples into training set, the next 98 into validation set, 
+# and the last 98 into test set
+
 # For the classification of iris, Stephen did something similar by replace the first 50s (from 'iris-setosa' to '0'
 # and 'iris-versicolor to '2', and so on). There were 150 examples total for iris with 0, and the second 50s with 1, etc. 
 # 
-# We need to code this section to do the above task. If not we have to manually adjusted our dataset just as
-# Sara did
+# We need to code this section to do the above task. If not we will need to manually adjusted it such as 
+# place the first 98 with the code word 'train' and then replace it with '0', the next 98 with 'valid' then
+# replace it with '1', etc
 
     stext1 = 'heart-setosa'
     stext2 = 'heart-versicolor'
