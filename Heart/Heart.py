@@ -13,10 +13,14 @@ def preprocessHeart(infile,outfile):
 ########################################################
 # To do for preprocessing the data start: 
 # try to preprocess the original heart-data set ('reprocessed.hungarian') 
-# by replacing the last number of each data row with '1' if it is 2, 3, or 4
-# If it is a 0, then we leave it as is. 
-# If we can't do it then we can just use the manually adjusted version 'heart-disease_txt'  
-# that Sara did it
+# According to the text on page 93, we need to preprocess the data so that later
+# on we can evenly split it into training, validation, and test sets
+# There is a total of 294 examples in our selected dataset so we need to
+# split the first 98 into training, the second 98 into validation, and the last 98 into testing sets.
+# This mean we have to change the last number of the first 98 dataset into 0, the second 98 dataset into 1, etc
+# For the classification of iris, Stephen did something similar by replace the first 50 
+# (there was 150 examples total for iris) with 0, and the second 50 with 1, and so on. 
+#
     stext1 = 'heart-setosa'
     stext2 = 'heart-versicolor'
     stext3 = 'heart-virginica'
@@ -35,17 +39,17 @@ def preprocessHeart(infile,outfile):
             oid.write(s.replace(stext3, rtext3))
     fid.close()
     oid.close()
-# To do end:
+# To do ends:
 ########################################################
 
 import numpy as np
 # Preprocessor to remove the test (only needed once)
-#preprocessHeart('C:\MLcode\MLCode\Ch4\heart-disease.data','heart_proc.data')
+#preprocessHeart('C:\Heart\Heart\reprocessed.hungarian.data','heart-disease.data')
 
 
 
 ########################################################
-# To do to improve our percentages into the high 80 or 90 starts:
+# To do to improve our percentages into the high 80s or 90s starts:
 
 heart = np.loadtxt('heart-disease.data', delimiter=' ')
 
@@ -64,6 +68,7 @@ imax = np.concatenate((heart.max(axis=0)*np.ones((1,5)),np.abs(heart.min(axis=0)
 heart[:,:4] = heart[:,:4]/imax[:4]
 print heart[0:5,:]
 
+# Split into training, validation, and test sets
 target = np.zeros((np.shape(heart)[0],3));
 indices = np.where(heart[:,4]==0) 
 target[indices,0] = 1
@@ -71,6 +76,7 @@ indices = np.where(heart[:,4]==1)
 target[indices,1] = 1
 indices = np.where(heart[:,4]==2)
 target[indices,2] = 1
+
 
 # Randomly order the data
 order = range(np.shape(heart)[0])
