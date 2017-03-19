@@ -22,9 +22,7 @@ def preprocessHeart(infile,outfile):
 # For the classification of iris, Stephen did something similar by replace the first 50s (from 'iris-setosa' to '0'
 # and 'iris-versicolor to '2', and so on). There were 150 examples total for iris with 0, and the second 50s with 1, etc. 
 # 
-# We need to code this section to do the above task. If not we will need to manually adjusted it such as 
-# place the first 98 with the code word 'train' and then replace it with '0', the next 98 with 'valid' then
-# replace it with '1', etc
+
 
     stext1 = 'heart-setosa'
     stext2 = 'heart-versicolor'
