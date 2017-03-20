@@ -30,24 +30,30 @@ import numpy as np
 def formatDayTime(data):
     dataRange = np.shape(data)[0]
     dayInMonth = [0,31,59,90,120,151,181,212,243,273,304,334]
-	
+	#zero for new data maxtrix of 2 column with same old data rows
     newData = np.zeros((dataRange,2))
+	
+    #loop each line of old data for convert
     for i in range(dataRange):
+        #newdata column 1 = old data last 4 digit for year (Ex: 10032004 => 2004)
         newData[i,0] = (data[i,0] % 10000)
+		#get day from old data column1 (Ex: 10032004 => 10)
         day = float(int(data[i,0] / 1000000))
+		#get month from old data column1 (Ex: 10032004 => 03)
         month = int(data[i,0] / 10000) % 100
+		#newdata column2 = total days in a year (Ex: 10032004 => 10 + 59)
         newData[i,1] = (day + dayInMonth[month-1])
-        if data[i,2] < 0:
-            data[i,2] = 0
     subData = data[:, 2:]
-
+    #combine the new data with old data except first 2 column
     newData = np.concatenate((newData, subData), axis=1)
     return newData
 
 PNoz = np.loadtxt('AirQualityUCI.data', delimiter=';',skiprows = 1)
+#format first 2 columns of data that col1= year, col2=total days in a year
 PNoz = formatDayTime(PNoz)
 print PNoz
 
+#remove entire row of data that column3 contain -200 or -2000 value
 newData = PNoz[0:1,:]
 for i in range(np.shape(PNoz)[0]):
     if i != 0:
@@ -55,7 +61,7 @@ for i in range(np.shape(PNoz)[0]):
             newData = np.append(newData, PNoz[i:i+1,:],axis=0)
 PNoz = newData
 
-			
+#check if data contain negative number like -200 or -2000
 for i in range(np.shape(PNoz)[0]):
     if PNoz[i,2] < 0:
         print PNoz[i,2]
@@ -106,7 +112,7 @@ targets = targets[change,:]
 
 # Train the network
 import mlp
-net = mlp.mlp(train,traintargets,3,outtype='linear')
+net = mlp.mlp(train,traintargets,15,outtype='linear')
 net.earlystopping(train,traintargets,valid,validtargets,0.25)
 
 test = np.concatenate((test,-np.ones((np.shape(test)[0],1))),axis=1)
