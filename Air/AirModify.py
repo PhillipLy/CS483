@@ -23,9 +23,38 @@
 #from datetime import datetime
 
 
+# Processing 'AirQualityUCI.csv' to 'AirQualityUCI.data' (for example) by replacing the 
+# ',' in 'AirQualityUCI.csv' with '.' in 'AirQualityUCI.data', etc.
+def preprocessAirData(infile,outfile):
+
+	fid = open(infile, 'r')
+	oid = open(outfile, 'w')
+	firstLine = True
+	for s in fid:
+		if firstLine:
+			firstLine = False
+			oid.write(s)
+			continue			
+		s = s.replace('/', '')
+		s = s.replace('.00.00', '')
+		s = s.replace(',', '.')
+		s = s.replace(';;', '')
+		oid.write(s)
+
+
+	fid.close()
+	oid.close()
+
+	
+
 
 import pylab as pl
 import numpy as np
+
+
+#Process data once, uncomment to process
+preprocessAirData('AirQualityUCI.csv', 'AirQualityUCI.data')
+
 
 def formatDayTime(data):
     dataRange = np.shape(data)[0]
