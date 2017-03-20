@@ -34,7 +34,7 @@ def preprocessAirData(infile,outfile):
 			continue			
 		s = s.replace('/', '')
 		s = s.replace('.00.00', '')
-		s = s.replace(',', '')
+		s = s.replace(',', '.')
 		s = s.replace(';;', '')
 		oid.write(s)
 

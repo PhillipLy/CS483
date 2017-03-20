@@ -70,7 +70,7 @@ pl.ion()
 #np.shape([1,2,3]) = 3 ====> np.shape(PNoz)[0] = 2855 lines
 #pl.plot(x,y, optional) x = 0 to 3854, y = third column of data, using point to display in graph
 pl.plot(np.arange(np.shape(PNoz)[0]),PNoz[:,2],'.')
-pl.xlabel('Time (Days)')
+pl.xlabel('Time (hours)')
 pl.ylabel('CO (in mg/m^3)')
 
 # Normalise data
