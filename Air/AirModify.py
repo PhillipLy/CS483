@@ -141,7 +141,7 @@ targets = targets[change,:]
 
 # Train the network
 import mlp
-net = mlp.mlp(train,traintargets,15,outtype='linear')
+net = mlp.mlp(train,traintargets,3,outtype='linear')
 net.earlystopping(train,traintargets,valid,validtargets,0.25)
 
 test = np.concatenate((test,-np.ones((np.shape(test)[0],1))),axis=1)
