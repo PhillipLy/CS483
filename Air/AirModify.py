@@ -2,29 +2,12 @@
 # California State University Fullerton
 # CPSC 483: Data Mining and Pattern Recognition - Spring 2017
 
-# Software Engineers: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey
+# Team: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey
 # Courtesy of Stephen Marsland
 
 # Machine learning: Regression of the Air Quality Dataset 
 
 
-# for preprocessing the Air quality data from 'AirQualityUCI.csv' (source file)
-# and 'AirQualityUCI.data' (processed file), we have to play around with regular expression
-# to get pass errors from noise in the original dataset such 2,6 
-# helpful stackoverflow:  http://stackoverflow.com/questions/16720541/python-string-replace-regular-expression
-
-# As of now, I have managed to get by all the errors but currently our graphs are not looking like
-# time-series as illustrated in the book, we will have to improve the preprocessing of 
-# AirQualityUCI.csv to get more accurate looking graphs
-
-# Another alternative is to just use another dataset, I am also working on the alternative/backup 
-# dataset to do regression on, I am also working on the wine dataset (UCI's repo) as our backup just in case
-
-#from datetime import datetime
-
-
-# Processing 'AirQualityUCI.csv' to 'AirQualityUCI.data' (for example) by replacing the 
-# ',' in 'AirQualityUCI.csv' with '.' in 'AirQualityUCI.data', etc.
 def preprocessAirData(infile,outfile):
 
 	fid = open(infile, 'r')
@@ -41,11 +24,9 @@ def preprocessAirData(infile,outfile):
 		s = s.replace(';;', '')
 		oid.write(s)
 
-
 	fid.close()
 	oid.close()
 
-	
 
 
 import pylab as pl
