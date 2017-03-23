@@ -26,12 +26,8 @@ def preprocessAirData(infile,outfile):
 
 	fid.close()
 	oid.close()
-
-
-
 import pylab as pl
 import numpy as np
-
 
 #Process data once, uncomment to process
 preprocessAirData('AirQualityUCI.csv', 'AirQualityUCI.data')
@@ -90,8 +86,8 @@ Air[:,2] = Air[:,2]-Air[:,2].mean()
 Air[:,2] = Air[:,2]/Air[:,2].max()
 
 # Assemble input vectors
-t = 2
-k = 6
+t = 3
+k = 10
 
 #lastPoint = 3855 - 2*(3+1) = 2847
 lastPoint = np.shape(Air)[0]-t*(k+1)
@@ -105,12 +101,12 @@ for i in range(lastPoint):
     inputs[i,:] = Air[i:i+t*k:t,2]
     targets[i] = Air[i+t*(k+1),2]
 
-test = inputs[-400:,:]
-testtargets = targets[-400:]
-train = inputs[:-400:2,:]
-traintargets = targets[:-400:2]
-valid = inputs[1:-400:2,:]
-validtargets = targets[1:-400:2]
+test = inputs[-800:,:]
+testtargets = targets[-800:]
+train = inputs[:-800:2,:]
+traintargets = targets[:-800:2]
+valid = inputs[1:-800:2,:]
+validtargets = targets[1:-800:2]
 
 # Randomly order the data
 # change = [0 to 2846]
@@ -122,8 +118,8 @@ targets = targets[change,:]
 
 # Train the network
 import mlp
-net = mlp.mlp(train,traintargets,3,outtype='linear')
-net.earlystopping(train,traintargets,valid,validtargets,0.25)
+net = mlp.mlp(train,traintargets,4,outtype='linear')
+net.earlystopping(train,traintargets,valid,validtargets,0.30)
 
 test = np.concatenate((test,-np.ones((np.shape(test)[0],1))),axis=1)
 testout = net.mlpfwd(test)
