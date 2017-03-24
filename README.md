@@ -1,7 +1,8 @@
 # Heart Disease and Air Quality Datasets
 **CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learning Algorithms** 
 
-** California State University, Fullerton**
+California State University, Fullerton
+
 **Team: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey**
 
 
