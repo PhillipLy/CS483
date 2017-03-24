@@ -1,9 +1,11 @@
 # Heart Disease and Air Quality Datasets
-CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learning Algorithms 
+**CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learning Algorithms** 
 
-Steps to Replicate Our Results
+**Team: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey**
 
-Prerequisites:
+**Steps to Replicate Our Results**
+
+**Prerequisites:**
 - Python 2.7
 - numPy
 - matplotLib
@@ -12,7 +14,7 @@ Prerequisites:
 - In terminal type: git clone https://github.com/PhillipLy/CS483.git
 - Notice there are 2 folders- Heart and Air. 
 
-For Classification:
+**For Classification:**
 
 2) Change into “Heart” directory:
 - cd Heart
@@ -26,7 +28,7 @@ For Classification:
 - Made global variables so that it is easier to test different features
 - Changed the number of hidden nodes from 5 to 3
 
-For Regression
+**For Regression**
 - Change into “Air” directory
 - cd Air
 - python air.py
