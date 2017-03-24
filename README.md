@@ -1,4 +1,4 @@
-# Heart Disease and Air Quality
+# Heart Disease and Air Quality Datasets
 CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learning Algorithms 
 
 Steps to Replicate Our Results
