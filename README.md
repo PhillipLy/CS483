@@ -4,16 +4,17 @@ CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learn
 Steps to Replicate Our Results
 
 Prerequisites:
--Python 2.7
--numPy
--matplotLib
+- Python 2.7
+- numPy
+- matplotLib
 
 1) Download project from GitHub repository:
 - In terminal type: git clone https://github.com/PhillipLy/CS483.git
 - Notice there are 2 folders- Heart and Air. 
 
 For Classification:
-2) Change into “Heart” directory
+
+2) Change into “Heart” directory:
 - cd Heart
 - python heart.py
 - The range of % that we got
