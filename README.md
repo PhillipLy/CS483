@@ -5,6 +5,10 @@ California State University, Fullerton
 
 **Team: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey**
 
+The goal is to train, validate, and test Multi-Layer Perceptrons or RBF Networks by implementing 
+classification and regression (including time series prediction over a period of 8000 hours) algorithms 
+on Heart Disease and Air Quality data sets from UC Irvine Machine Learning Repository. We've attained 
+an accuracy as high as 95% for classification of heart disease.
 
 **Steps to Replicate Our Results**
 
@@ -32,7 +36,7 @@ California State University, Fullerton
 - Changed the number of hidden nodes from 5 to 3
 
 **For Regression**
-- Change into “Air” directory
+3) Change into “Air” directory
 - cd Air
 - python air.py
 - The range of % that we got
