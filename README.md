@@ -1,9 +1,9 @@
 # Heart Disease and Air Quality Datasets
 **CPSC 483 - Data Mining and Pattern Recognition - Implementation of Machine Learning Algorithms** 
 
-California State University, Fullerton
-
 **Team: Phillip Ly, Holly Ho, Sara Lipowsky, Tony Dao, James Lindsey**
+
+**Link to report and PPT slides: https://goo.gl/ab6WQy**
 
 The goal is to train, validate, and test Multi-Layer Perceptrons or RBF Networks by implementing 
 classification and regression (including time series prediction over a period of 8000 hours) algorithms 
@@ -22,7 +22,6 @@ an accuracy as high as 95% for classification of heart disease.
 - Notice there are 2 folders- Heart and Air. 
 
 **For Classification:**
-
 2) Change into “Heart” directory:
 - cd Heart
 - python heart.py
