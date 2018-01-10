@@ -34,7 +34,7 @@ an accuracy as high as 95% for classification of heart disease.
 - Made global variables so that it is easier to test different features
 - Changed the number of hidden nodes from 5 to 3
 
-**For Regression**
+**For Regression:**
 3) Change into “Air” directory
 - cd Air
 - python air.py
