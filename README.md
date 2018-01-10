@@ -22,6 +22,7 @@ an accuracy as high as 95% for classification of heart disease.
 - Notice there are 2 folders- Heart and Air. 
 
 **For Classification:**
+
 2) Change into “Heart” directory:
 - cd Heart
 - python heart.py
@@ -35,6 +36,7 @@ an accuracy as high as 95% for classification of heart disease.
 - Changed the number of hidden nodes from 5 to 3
 
 **For Regression:**
+
 3) Change into “Air” directory
 - cd Air
 - python air.py
@@ -47,4 +49,3 @@ an accuracy as high as 95% for classification of heart disease.
 - Change t and k value 2 and 3 to 3 and 10 
 - Changed the number of hidden nodes from 3 to 4
 - Changed the learning rate from 0.25 to 0.3
-
